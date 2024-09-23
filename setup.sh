@@ -5,14 +5,14 @@
 echo "Aktualizuję system..."
 sudo apt update && sudo apt upgrade -y
 
-echo "Sprawdzam, czy Nginx jest zainstalowany..."
-if dpkg -l | grep -q nginx; then
-    echo "Nginx już jest zainstalowany."
+echo "Sprawdzam, czy Apache jest zainstalowany..."
+if dpkg -l | grep -q apache2; then
+    echo "Apache już jest zainstalowany."
 else
-    echo "Instaluję Nginx..."
-    sudo apt install nginx -y
-    sudo systemctl start nginx
-    sudo systemctl enable nginx
+    echo "Instaluję Apache..."
+    sudo apt install apache2 -y
+    sudo systemctl start apache2
+    sudo systemctl enable apache2
 fi
 
 echo "Sprawdzam firewalld..."
